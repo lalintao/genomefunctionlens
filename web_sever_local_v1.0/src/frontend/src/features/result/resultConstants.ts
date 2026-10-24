@@ -1,0 +1,93 @@
+import type { PaletteScheme, PartitionShape } from "./resultTypes";
+
+export const RANKS = ["domain", "phylum", "class", "order", "family", "genus", "species"];
+export const DISPLAY_RANKS = ["phylum", "class", "order", "family", "genus", "species"];
+export const DEFAULT_PALETTE_ID = "terracotta";
+export const CART_RECORD_HEIGHT = 116;
+export const CART_OVERSCAN = 6;
+
+export const PALETTES: PaletteScheme[] = [
+  { id: DEFAULT_PALETTE_ID, name: "陶土红", colors: ["#FFFFFF", "#EABA9F", "#D16D5B", "#B7282E", "#7A1E1E"] },
+  { id: "blue_orange", name: "蓝橙对比", colors: ["#FFFFFF", "#75B5DC", "#F5F5F2", "#DC917B", "#B7282E"] },
+  { id: "emerald", name: "翡翠绿", colors: ["#FFFFFF", "#A4CBB7", "#669877", "#3F7F4C", "#1E5B3A"] },
+  { id: "berry_purple", name: "莓果紫", colors: ["#FFFFFF", "#C87D98", "#9B3F5C", "#832440", "#5C1F4A"] },
+  { id: "mist_blue", name: "雾霭蓝", colors: ["#FFFFFF", "#AFCDD7", "#7C9BB5", "#4A6C92", "#313A54"] },
+  { id: "sage_green", name: "鼠尾草绿", colors: ["#FFFFFF", "#D7E8DE", "#A7C8B2", "#78A486", "#4E7C59"] },
+  { id: "dusty_purple", name: "灰粉紫", colors: ["#FFFFFF", "#E5D7DD", "#C9AEB9", "#A07B8D", "#7B5D72"] },
+  { id: "glacier_cyan", name: "冰川青", colors: ["#FFFFFF", "#D7E8ED", "#9EC3CF", "#6F97A6", "#3E697A"] },
+  { id: "cream_gray_blue", name: "奶油灰蓝", colors: ["#FFFFFF", "#DDE6E7", "#B7C7CC", "#8297A1", "#5C6B73"] },
+  { id: "cool_mist_blue", name: "冷雾蓝", colors: ["#FFFFFF", "#DAE7E6", "#89BED9", "#4A6C92", "#073162"] },
+];
+
+export interface HeatmapColorScheme {
+  id: string;
+  nameZh: string;
+  nameEn: string;
+  saturation: "low" | "high";
+  colors: readonly string[];
+}
+
+export const HEATMAP_COLOR_SCHEMES: readonly HeatmapColorScheme[] = [
+  { id: "mineral_blue", nameZh: "矿物蓝", nameEn: "Mineral Blue", saturation: "low", colors: ["#FFFFFF", "#E2E7EF", "#C8D1DF", "#A5B4CA", "#7F94B1", "#607694", "#425A79", "#293E5E"] },
+  { id: "coastal_teal", nameZh: "海岸青", nameEn: "Coastal Teal", saturation: "low", colors: ["#FFFFFF", "#DFECEA", "#C5DDDA", "#9FC8C4", "#75AEA9", "#508D89", "#326B6B", "#194B50"] },
+  { id: "dusty_berry", nameZh: "雾莓紫", nameEn: "Dusty Berry", saturation: "low", colors: ["#FFFFFF", "#EBE1E6", "#D9C5CF", "#C3A4B2", "#AA7E91", "#8F5F74", "#70445C", "#512D45"] },
+  { id: DEFAULT_PALETTE_ID, nameZh: "炽焰红", nameEn: "Solar Flare", saturation: "high", colors: ["#FFFFFF", "#F8EAE1", "#FBE3D6", "#FAD4BF", "#F5AC8B", "#C6403D", "#A81428", "#780522"] },
+  { id: "figure_1_palette_1", nameZh: "图1-1 深海暖橙", nameEn: "Figure 1-1 Deep Sea Warm Orange", saturation: "high", colors: ["#023048", "#0E5B76", "#1A86A3", "#46ACC8", "#9BCFE8", "#F3F9FC", "#FFCA5F", "#FEA809", "#FD9802", "#FB8402"] },
+  { id: "figure_1_palette_2", nameZh: "图1-2 墨绿砖红", nameEn: "Figure 1-2 Forest Brick", saturation: "high", colors: ["#001219", "#006073", "#099396", "#91D3C0", "#EBD7A5", "#EE9B00", "#CC6602", "#BC3E03", "#AE2012", "#9B2227"] },
+  { id: "figure_1_palette_3", nameZh: "图1-3 灰蓝暖褐", nameEn: "Figure 1-3 Blue Gray Warm Brown", saturation: "high", colors: ["#4E659B", "#8A8CBF", "#B8A8CF", "#E7BCC6", "#FDCF9E", "#EFA484", "#B6766C"] },
+  { id: "figure_1_palette_4", nameZh: "图1-4 藏蓝酒红", nameEn: "Figure 1-4 Navy Wine", saturation: "high", colors: ["#104680", "#317CB7", "#6DADD1", "#B6D7E8", "#E9F1F4", "#FBE3D5", "#F6B293", "#DC6D57", "#B72230", "#6D011F"] },
+  { id: "figure_2_palette_1", nameZh: "图2-1 深海暗红", nameEn: "Figure 2-1 Deep Sea Dark Red", saturation: "high", colors: ["#3951A2", "#72AACF", "#CAE8F2", "#FEFBBA", "#FDB96B", "#EC5D3B", "#A80326"] },
+  { id: "figure_2_palette_2", nameZh: "图2-2 水鸭深棕", nameEn: "Figure 2-2 Teal Brown", saturation: "high", colors: ["#017987", "#2B9CA1", "#7BB2B0", "#A4C6BB", "#DBE9E3", "#FFF7EE", "#F2DABE", "#C7A37E", "#7D674B", "#332D15"] },
+  { id: "figure_2_palette_3", nameZh: "图2-3 夜蓝暗紫", nameEn: "Figure 2-3 Night Blue Purple", saturation: "high", colors: ["#20364F", "#31646C", "#4E9280", "#96B89B", "#DCDFD2", "#ECD9CF", "#D49C87", "#B86265", "#8B345E", "#50184E"] },
+  { id: "figure_2_palette_4", nameZh: "图2-4 藏青纯白", nameEn: "Figure 2-4 Navy White", saturation: "high", colors: ["#FFFFFF", "#D2E3F3", "#AACFE5", "#68ACD5", "#3888C0", "#105CA4", "#08336E"] },
+  { id: "figure_2_palette_5", nameZh: "图2-5 铁锈乳白", nameEn: "Figure 2-5 Rust Cream", saturation: "high", colors: ["#FFFFFF", "#FDDEA6", "#FDB97C", "#FC8C3B", "#E85C0C", "#B63C02", "#802703"] },
+  { id: "figure_3_palette_1", nameZh: "图3-1 深青珊瑚", nameEn: "Figure 3-1 Teal Coral", saturation: "high", colors: ["#264653", "#287271", "#299D90", "#8AB07D", "#E8C56B", "#F3A261", "#E66F51"] },
+  { id: "figure_3_palette_2", nameZh: "图3-2 茄紫深褐", nameEn: "Figure 3-2 Aubergine Brown", saturation: "high", colors: ["#3A0D60", "#654496", "#978DBE", "#C6C4DF", "#EBECF2", "#FCE6C9", "#FDC175", "#E4891E", "#B55A06", "#7F3B08"] },
+  { id: "figure_3_palette_3", nameZh: "图3-3 靛蓝暖黄", nameEn: "Figure 3-3 Indigo Warm Yellow", saturation: "high", colors: ["#FDB96A", "#FEE89A", "#F5FBB1", "#CBE99D", "#87CFA4", "#469EB4", "#4E62AB"] },
+  { id: "figure_4_palette_1", nameZh: "图4-1 海军玫红", nameEn: "Figure 4-1 Navy Rose", saturation: "high", colors: ["#1A318B", "#496CCE", "#82AAE7", "#B9D2F3", "#E6F0FE", "#F9DBE5", "#F7A6BF", "#E46B90", "#C03F67", "#9A133D"] },
+  { id: "figure_4_palette_2", nameZh: "图4-2 午夜淡黄绿", nameEn: "Figure 4-2 Midnight Lime", saturation: "high", colors: ["#FFFFFF", "#DAF0B2", "#90D4B9", "#3EB3C4", "#1D80B9", "#224199", "#0A1F5E"] },
+  { id: "figure_4_palette_3", nameZh: "图4-3 墨绿米白", nameEn: "Figure 4-3 Forest Ivory", saturation: "high", colors: ["#FFFFFF", "#ECF7B1", "#BAE294", "#77C578", "#379E54", "#0C713B", "#004629"] },
+  { id: "figure_4_palette_4", nameZh: "图4-4 深青纯白", nameEn: "Figure 4-4 Deep Teal White", saturation: "high", colors: ["#FFFFFF", "#C2DEDB", "#9CC4C1", "#75AAA6", "#4D908A", "#277670", "#005C55"] },
+  { id: "figure_5_palette_1", nameZh: "图5-1 深褐深青", nameEn: "Figure 5-1 Brown Teal", saturation: "high", colors: ["#543005", "#AB6E1F", "#E3CA8D", "#F5F3ED", "#A7DCD4", "#31948C", "#004A40"] },
+  { id: "figure_6_palette_1", nameZh: "图6-1 荧光黄深蓝紫", nameEn: "Figure 6-1 Fluorescent Yellow Blue Purple", saturation: "high", colors: ["#EFF821", "#FDC427", "#F89540", "#E56C5B", "#CB4777", "#A92395", "#7E03A7", "#4C02A1", "#0C0786"] },
+  { id: "figure_7_palette_1", nameZh: "图7-1 深海棕褐", nameEn: "Figure 7-1 Deep Sea Brown", saturation: "high", colors: ["#0F2B5F", "#5991C7", "#8EC1E7", "#B9DBF1", "#D5A370", "#7B4F37"] },
+  { id: "figure_7_palette_2", nameZh: "图7-2 水鸭玫粉", nameEn: "Figure 7-2 Teal Rose", saturation: "high", colors: ["#009B9E", "#42B7B9", "#A7D3D4", "#F1F1F1", "#E4C1D9", "#D691C1", "#C75DAB"] },
+  { id: "figure_7_palette_3", nameZh: "图7-3 皇家纯红", nameEn: "Figure 7-3 Royal Red", saturation: "high", colors: ["#4472C4", "#6B90D0", "#96B0DD", "#C2D1EB", "#EBF0F9", "#FFE7E7", "#FFAFAF", "#FF7070", "#FF3737", "#FF0000"] },
+  { id: "figure_7_palette_4", nameZh: "图7-4 深青淡紫", nameEn: "Figure 7-4 Deep Teal Lilac", saturation: "high", colors: ["#224767", "#6FAEE0", "#A1CAED", "#D1E6F8", "#FEFDFE", "#E4CCE4", "#CA95C3", "#A85EA2", "#8E338A"] },
+  { id: "figure_8_palette_1", nameZh: "图8-1 珊瑚紫蓝", nameEn: "Figure 8-1 Coral Blue Purple", saturation: "high", colors: ["#6F78B9", "#779FC6", "#7FC6D3", "#ABE0E4", "#E3F5F6", "#FFF0DC", "#FED297", "#FCB461", "#F7935A", "#F37252"] },
+  { id: "figure_8_palette_2", nameZh: "图8-2 森林暗红", nameEn: "Figure 8-2 Forest Dark Red", saturation: "high", colors: ["#27744B", "#6C9C7F", "#A3BFAD", "#D5E1DA", "#FBF9FA", "#D9C7CC", "#B7939D", "#935867", "#6A1128"] },
+  { id: "figure_8_palette_3", nameZh: "图8-3 中国红黑", nameEn: "Figure 8-3 Chinese Red Black", saturation: "high", colors: ["#231C1F", "#174263", "#0D67A6", "#5CA0CF", "#C9DFEF", "#FCE7CE", "#F6B66B", "#ED8622", "#D75728", "#C1282D"] },
+  { id: "figure_8_palette_4", nameZh: "图8-4 深紫鹅黄", nameEn: "Figure 8-4 Deep Purple Yellow", saturation: "high", colors: ["#F8EE97", "#C5DD6D", "#82CD66", "#5AB37D", "#479A88", "#348286", "#226C87", "#10528E", "#1E3096", "#2A1773"] },
+  { id: "figure_9_palette_1", nameZh: "图9-1 砖红藏蓝", nameEn: "Figure 9-1 Brick Navy", saturation: "high", colors: ["#3F60A3", "#527CB4", "#7FA9CD", "#D1E2EF", "#FFFFFF", "#FBECAB", "#F9C676", "#E4945A", "#BD3C33"] },
+];
+
+export const RECTANGULAR_HEATMAP_SHAPES: Array<{ value: PartitionShape; label: string }> = [
+  { value: "square", label: "正方形" },
+  { value: "fill", label: "铺满" },
+  { value: "circle", label: "圆形" },
+];
+
+export const CIRCULAR_HEATMAP_SHAPES: Array<{ value: PartitionShape; label: string }> = [
+  { value: "circle", label: "圆形" },
+  { value: "fill", label: "扇形" },
+];
+
+export const PALETTE_NAME_EN: Record<string, string> = {
+  [DEFAULT_PALETTE_ID]: "Terracotta",
+  blue_orange: "Blue Orange",
+  emerald: "Emerald",
+  berry_purple: "Berry Purple",
+  mist_blue: "Mist Blue",
+  sage_green: "Sage Green",
+  dusty_purple: "Dusty Purple",
+  glacier_cyan: "Glacier Cyan",
+  cream_gray_blue: "Cream Gray Blue",
+  cool_mist_blue: "Cool Mist Blue",
+};
+
+export const SHAPE_LABEL_EN: Record<PartitionShape, string> = {
+  fill: "Fill",
+  circle: "Circle",
+  square: "Square",
+  triangle: "Triangle",
+};

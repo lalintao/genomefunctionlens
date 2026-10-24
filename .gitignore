@@ -1,0 +1,36 @@
+# Generated scientific data and build inputs
+project_data/
+row_data/
+temporary_file/
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/.venv/
+**/.venv-local/
+**/.pytest_cache/
+**/.ruff_cache/
+
+# Node and frontend build tooling
+**/node_modules/
+**/.npm-cache/
+**/*.tsbuildinfo
+
+# Local runtime state
+**/local_data/saved_queries/
+**/local_data/downloads/
+**/*.sqlite-wal
+**/*.sqlite-shm
+
+# Logs and IDE metadata
+**/*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Release archives and local runtime artifacts
+*.zip
+*.zip.sha256
+*.err
+.Rhistory

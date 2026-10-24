@@ -1,0 +1,26 @@
+# User-generated scientific data (distributed by the project_data pipeline)
+/project_data/
+
+# Runtime state created by the local edition
+/local_data/*
+!/local_data/README.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv-local/
+.pytest_cache/
+.ruff_cache/
+*.log
+
+# Node / frontend build tooling
+node_modules/
+.npm-cache/
+*.tsbuildinfo
+/tmp/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

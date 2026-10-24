@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>本地版数据说明 / Local Edition Notice</title>
+    <style>
+      :root { color-scheme: light; font-family: "Segoe UI", "Microsoft YaHei", sans-serif; color: #17212b; background: #f5f7f5; }
+      body { margin: 0; }
+      main { max-width: 820px; margin: 0 auto; padding: 56px 24px 80px; }
+      article { background: #fff; border: 1px solid #dfe5df; border-radius: 18px; padding: 36px; box-shadow: 0 16px 48px rgba(24, 45, 34, .08); }
+      h1 { margin-top: 0; font-size: 2rem; }
+      h2 { margin-top: 2rem; font-size: 1.15rem; }
+      p, li { line-height: 1.75; color: #435047; }
+      .meta { color: #758078; font-size: .9rem; }
+      code { background: #f0f3f0; border-radius: 4px; padding: 2px 5px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>web_sever 本地版数据说明</h1>
+        <p class="meta">Local Edition Notice · Version 1.0.0</p>
+
+        <h2>本地运行</h2>
+        <p>本地版在用户自己的 Windows 电脑上运行，不包含登录、账号、Chat、DeepSeek 或 RAG 服务。页面和查询服务默认只监听 <code>127.0.0.1</code>。</p>
+
+        <h2>数据存储</h2>
+        <p>保存的查询、分类和下载任务状态写入安装目录下的 <code>local_data</code> 文件夹。科学查询只读取用户自行生成的 <code>project_data</code> 数据包。</p>
+
+        <h2>对外连接</h2>
+        <p>正常使用查询、树、热图、保存和下载功能时，本地版不会把查询内容发送到外部服务。首次安装 Python 依赖时需要访问 PyPI。</p>
+
+        <h2>数据清理</h2>
+        <p>删除 <code>local_data</code> 会移除本机保存的查询和下载任务记录；删除前请先备份需要保留的内容。</p>
+
+        <p><a href="./">返回本地版首页</a></p>
+      </article>
+    </main>
+  </body>
+</html>

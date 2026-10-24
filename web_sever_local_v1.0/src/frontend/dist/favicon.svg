@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Protein distribution">
+  <rect width="64" height="64" rx="12" fill="#123B52"/>
+  <path d="M12 18h40M12 32h40M12 46h40M20 12v40M32 12v40M44 12v40" stroke="#E7F0F2" stroke-width="3" opacity=".85"/>
+  <circle cx="20" cy="18" r="5" fill="#E9A23B"/>
+  <circle cx="44" cy="46" r="5" fill="#E9A23B"/>
+</svg>

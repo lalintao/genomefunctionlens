@@ -1,0 +1,26 @@
+export const UI_TEXT = {
+  zh: {
+    brandTitle: "Genome Function Lens",
+    brandSubtitle: "蛋白质系统发育分布工作台",
+    language: "语言",
+    notice: "提示",
+    loadingTitle: "正在加载数据",
+    preparingTitle: "正在准备视图",
+    preparingText: "正在准备物种树和热图...",
+    emptyTitle: "正在准备物种树和热图行",
+    emptyText: "大型数据集需要一点时间。如果长时间停留在这里，请检查查询或刷新页面。",
+    drawer: { tree: "物种树", heatmap: "热图" },
+  },
+  en: {
+    brandTitle: "Genome Function Lens",
+    brandSubtitle: "Cross-species annotation workspace",
+    language: "Language",
+    notice: "Notice",
+    loadingTitle: "Loading data",
+    preparingTitle: "Preparing view",
+    preparingText: "Preparing the tree and heatmap...",
+    emptyTitle: "Preparing tree and heatmap rows",
+    emptyText: "Large datasets can take a moment. If this stays here too long, check the query or refresh the page.",
+    drawer: { tree: "Tree", heatmap: "Heatmap" },
+  },
+} as const;

@@ -1,0 +1,13 @@
+name: webdb_pipeline
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - biopython>=1.84
+  - numpy>=1.26
+  - pandas>=2.2
+  - pyarrow>=15
+  - tqdm>=4.66
+  - pip:
+      - -e .

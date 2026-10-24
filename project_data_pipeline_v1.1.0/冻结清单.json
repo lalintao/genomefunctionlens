@@ -1,0 +1,280 @@
+{
+  "artifact": "project_data_pipeline_v1.1.0",
+  "pipeline_version": "1.1.0",
+  "runtime_schema_version": "4.0",
+  "frozen_at_utc": "2026-10-22T15:46:39.224955+00:00",
+  "hotfix_date": "2026-10-22",
+  "source_workspace": "F:\\Project\\web_database_deel",
+  "release_root": "F:\\Project\\web_database_deel\\releases\\project_data_pipeline_v1.1.0",
+  "python_tested": [
+    "3.14.6 unit tests and smoke builds",
+    "3.11.15 full benchmark baseline"
+  ],
+  "dependencies_tested": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "pyarrow": "23.0.1",
+    "tqdm": "4.70.1",
+    "biopython": "1.88 for unit tests"
+  },
+  "hotfix": {
+    "issue": "annotation TSV parsing assumed a narrow ID/column format; zero-hit builds could silently publish without matrices; wide matrices used a full pivot",
+    "fixes": [
+      "zero-hit annotation types fail the build",
+      "annotation_hit_counts recorded in manifest",
+      "workers>1 rejected above 20,000,000 protein lookup entries",
+      "no annotation files fail the build",
+      "annotation columns accept tab, space, comma, and pipe separators",
+      "GTDB-style protein IDs such as AP022133.1_1553 are supported",
+      "wide annotation matrices write row-chunked Parquet without a full pivot",
+      "repair and diagnostic tools use the same delimiter rules"
+    ]
+  },
+  "validation": {
+    "unit_tests": "24 passed, 4 subtests in source and frozen release",
+    "smoke_build": "v1.1.0 workers=1 passed with 4 matrices",
+    "matrix_data_equality": "row-chunked matrices equal previous pivot output",
+    "v1_1_release_vs_src": "core files identical",
+    "sqlite_integrity": "ok"
+  },
+  "file_count": 36,
+  "release_specific_files": [
+    "README.md",
+    "运行说明.md",
+    "性能优化报告.md",
+    "审查报告_v1.0基线.md",
+    "annotation_零命中修复说明.md",
+    "VERSION",
+    "requirements-lock.txt",
+    "冻结清单.json",
+    "SHA256SUMS.txt"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1112,
+      "sha256": "8a9b7b1794a664e011ca9693a407bf29146e45181986adccb1512703ed75e10f"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 7,
+      "sha256": "6ca2e3356014241331fb2b399428fca23c558e3f3d428edcf4f56eb0fe907069"
+    },
+    {
+      "path": "annotation_零命中修复说明.md",
+      "bytes": 2460,
+      "sha256": "9d62e490dfd217621203aa089071f24d8a76a2168079b27d7511ce784194adce"
+    },
+    {
+      "path": "environment.yml",
+      "bytes": 190,
+      "sha256": "4ece18b1794b1264d4b2a9fb38f971a881d40e4426e8ab5a48a842293b35102e"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 850,
+      "sha256": "d3e44acb1073959944c3c5e0b542a1da56398832833fee1216647f88e8456e63"
+    },
+    {
+      "path": "pytest.ini",
+      "bytes": 29,
+      "sha256": "ddfcf6e0017476e9b9e8e55559c80e166c21f4f1ac242c7468dc85ad9dc69e52"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "bytes": 77,
+      "sha256": "e8203f2cd58190b2af81fe823e53c322fb10c0018d3ec7b2ff7d10f143ef585e"
+    },
+    {
+      "path": "run_pipeline.py",
+      "bytes": 518,
+      "sha256": "24eabbd29c17ce5d49a52ead79f04c63c0a3ce662686f2ae357274f42b7677aa"
+    },
+    {
+      "path": "src/docs/linux手动运行指南.md",
+      "bytes": 5203,
+      "sha256": "29d15f3778e24accdf2678ac7085d0c817e1f0be85faca4dca63b6c6378a4265"
+    },
+    {
+      "path": "src/docs/数据库4.0构建逻辑与输入规范.md",
+      "bytes": 12448,
+      "sha256": "0aea17a5d46625a84ccebe50f76a242e8dbeb95ac08ddefa4069ce41074c6ba3"
+    },
+    {
+      "path": "src/docs/数据库4.0物种树热图重构细节文档.md",
+      "bytes": 38253,
+      "sha256": "d631809b787c6843927bf83ed068535223cc0869b93e7daa1d32f716928d657f"
+    },
+    {
+      "path": "src/docs/数据库4.0运行期数据库说明.md",
+      "bytes": 7796,
+      "sha256": "8b1f8d2906cee99f5cf9fb68fbffe73136d1f63c58e9b5afed2bfca40b4575fc"
+    },
+    {
+      "path": "src/webdb_pipeline/__init__.py",
+      "bytes": 73,
+      "sha256": "ba82bfa0d94aa29d1a277c692aea1148ebb4e98d458e046142ed520bafd384a9"
+    },
+    {
+      "path": "src/webdb_pipeline/builders.py",
+      "bytes": 36248,
+      "sha256": "7c4254b0444f70d9ea2de7d5231715fb0b5d5845df2f63cfbae0e7afcb4ef88a"
+    },
+    {
+      "path": "src/webdb_pipeline/cli.py",
+      "bytes": 14967,
+      "sha256": "afa2cd61e8891d2adec69c8551a5a2a391951b960f5849d52f96484826331001"
+    },
+    {
+      "path": "src/webdb_pipeline/config.py",
+      "bytes": 1999,
+      "sha256": "f981df22faf586f540d1854c1e696cc7d9f808b555087b76e6d9b536b8d344e1"
+    },
+    {
+      "path": "src/webdb_pipeline/gtdb_taxonomy_metadata.py",
+      "bytes": 10290,
+      "sha256": "e05f4ba86bbe8927df1c689587a658bdf1ef8b3f89a78712813aad326a62fe75"
+    },
+    {
+      "path": "src/webdb_pipeline/inputs.py",
+      "bytes": 9448,
+      "sha256": "bb1a52008efcbdea6da417e18d1d084467337a78f348be2ba218eb8365196f81"
+    },
+    {
+      "path": "src/webdb_pipeline/io_utils.py",
+      "bytes": 615,
+      "sha256": "217710420756a83a94ef24b5ec083fab9d8baf1b94266ca040b0efdac25cb486"
+    },
+    {
+      "path": "src/webdb_pipeline/models.py",
+      "bytes": 593,
+      "sha256": "8b364d58f4200e4e1858eba9e91b3f00e17e5a05d9750f083252fc97536d388e"
+    },
+    {
+      "path": "src/webdb_pipeline/pipeline.py",
+      "bytes": 4061,
+      "sha256": "57b69af0e94fcd7756c80d15e1393a1c839af3ddbab9280bc9f266d8e0b2bdd3"
+    },
+    {
+      "path": "src/webdb_pipeline/row_data_audit.py",
+      "bytes": 29348,
+      "sha256": "965adafaa43b86081e6f7437d01d1f595eb959212ba94b89968b06fe31268e32"
+    },
+    {
+      "path": "src/webdb_pipeline/runtime_indexes.py",
+      "bytes": 11986,
+      "sha256": "ce3afd6a02e74072870e7b3fb3d42977558e53ba6f568e4e65e73026ecc19651"
+    },
+    {
+      "path": "src/webdb_pipeline/runtime_package.py",
+      "bytes": 84574,
+      "sha256": "edb1fdb035aae1e91d7d9145f90e9c6952d81aca03ecac8616a339c94a1eeabc"
+    },
+    {
+      "path": "src/webdb_pipeline/runtime_tree_upgrade.py",
+      "bytes": 18437,
+      "sha256": "99d34d9bad70a8c00c457951d7bce1fafe16b939e78db0380133fc4bbf7ad153"
+    },
+    {
+      "path": "tests/test_pipeline_preflight.py",
+      "bytes": 4166,
+      "sha256": "f07108c41c1fe85de08e47d91b2d173ac0670dbe9853435bf2420a2922855674"
+    },
+    {
+      "path": "tests/test_runtime_indexes.py",
+      "bytes": 14427,
+      "sha256": "a065571e87ef06bc6e70ea8634f1055a0ee12b3bb2104c6a6990d53d58e560fe"
+    },
+    {
+      "path": "tests/test_runtime_package_annotation.py",
+      "bytes": 11823,
+      "sha256": "c94e8cae218ce07df91c0bed3b1be3f5d0567634d8150866a3f54e9f3c7680ac"
+    },
+    {
+      "path": "tests/test_runtime_package_tree.py",
+      "bytes": 2376,
+      "sha256": "1bf6472c7da386b8aedd2f550f876a55ebf657d8c84b6bd8c19ecc89eb08517f"
+    },
+    {
+      "path": "tools/apply_annotation_repair.py",
+      "bytes": 5386,
+      "sha256": "7b7ee313e1fbc223bee156cbd361691bbb7cac2654726f7f243107a8fc404877"
+    },
+    {
+      "path": "tools/diagnose_annotation_ids.py",
+      "bytes": 14442,
+      "sha256": "e6e8040cd47b66bea8b534abe8adbdaba23153858c54b58d49a9b4d093cef17d"
+    },
+    {
+      "path": "tools/rebuild_annotation_matrices.py",
+      "bytes": 15891,
+      "sha256": "0fd531387ab42c55f6fd14a2687a038cbeb6cdece26e58a968ad672fe96e742c"
+    },
+    {
+      "path": "update_project_data_indexes.py",
+      "bytes": 8027,
+      "sha256": "1fd846655a49f1b293a30ab62b9030b880faf57c98da0b1a49df668cc4440aaa"
+    },
+    {
+      "path": "审查报告_v1.0基线.md",
+      "bytes": 3750,
+      "sha256": "01aa95b82fb8740e6073ad431c55d71ac1fa250c745c38e457d84cfedf960f19"
+    },
+    {
+      "path": "性能优化报告.md",
+      "bytes": 3300,
+      "sha256": "f9458ed00d8e2562defe8ef33f90a7ee33a66bcc96eeeae8213c7e6cfb44f8a0"
+    },
+    {
+      "path": "运行说明.md",
+      "bytes": 9606,
+      "sha256": "11e87e5d4258f2a2e6abfbeaf49c6d9bcc3ccb88633eecda91d7d1b614ee7a5a"
+    }
+  ],
+  "source_file_comparison": {
+    "src/webdb_pipeline/runtime_package.py": {
+      "sha256": "edb1fdb035aae1e91d7d9145f90e9c6952d81aca03ecac8616a339c94a1eeabc",
+      "matches_frozen_copy": true
+    },
+    "src/webdb_pipeline/builders.py": {
+      "sha256": "7c4254b0444f70d9ea2de7d5231715fb0b5d5845df2f63cfbae0e7afcb4ef88a",
+      "matches_frozen_copy": true
+    },
+    "src/webdb_pipeline/inputs.py": {
+      "sha256": "bb1a52008efcbdea6da417e18d1d084467337a78f348be2ba218eb8365196f81",
+      "matches_frozen_copy": true
+    },
+    "src/webdb_pipeline/pipeline.py": {
+      "sha256": "57b69af0e94fcd7756c80d15e1393a1c839af3ddbab9280bc9f266d8e0b2bdd3",
+      "matches_frozen_copy": true
+    },
+    "src/webdb_pipeline/row_data_audit.py": {
+      "sha256": "965adafaa43b86081e6f7437d01d1f595eb959212ba94b89968b06fe31268e32",
+      "matches_frozen_copy": true
+    },
+    "tests/test_runtime_package_annotation.py": {
+      "sha256": "c94e8cae218ce07df91c0bed3b1be3f5d0567634d8150866a3f54e9f3c7680ac",
+      "matches_frozen_copy": true
+    },
+    "src/docs/linux手动运行指南.md": {
+      "sha256": "29d15f3778e24accdf2678ac7085d0c817e1f0be85faca4dca63b6c6378a4265",
+      "matches_frozen_copy": true
+    },
+    "src/docs/数据库4.0构建逻辑与输入规范.md": {
+      "sha256": "0aea17a5d46625a84ccebe50f76a242e8dbeb95ac08ddefa4069ce41074c6ba3",
+      "matches_frozen_copy": true
+    },
+    "tools/rebuild_annotation_matrices.py": {
+      "sha256": "0fd531387ab42c55f6fd14a2687a038cbeb6cdece26e58a968ad672fe96e742c",
+      "matches_frozen_copy": true
+    },
+    "tools/apply_annotation_repair.py": {
+      "sha256": "7b7ee313e1fbc223bee156cbd361691bbb7cac2654726f7f243107a8fc404877",
+      "matches_frozen_copy": true
+    },
+    "tools/diagnose_annotation_ids.py": {
+      "sha256": "e6e8040cd47b66bea8b534abe8adbdaba23153858c54b58d49a9b4d093cef17d",
+      "matches_frozen_copy": true
+    }
+  }
+}
