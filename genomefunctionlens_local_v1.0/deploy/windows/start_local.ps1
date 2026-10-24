@@ -121,7 +121,7 @@ $env:PYTHONUTF8 = "1"
 
 $BrowserHost = if ($BindAddress -in @("0.0.0.0", "::")) { "127.0.0.1" } else { $BindAddress }
 $Url = "http://$BrowserHost`:$Port/"
-Write-Step "Starting web_sever local edition"
+Write-Step "Starting GenomeFunctionLens Local"
 Write-Host "URL:          $Url"
 Write-Host "project_data: $ProjectDataRoot"
 Write-Host "local_data:   $LocalDataRoot"

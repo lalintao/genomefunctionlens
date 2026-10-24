@@ -1,6 +1,6 @@
-# web_sever 本地版（Windows）
+# GenomeFunctionLens Local（Windows）
 
-这是 `web_sever` 的 Windows 本地单用户版本，面向本地查询、物种树/热图浏览、结果导出、查询保存和序列下载。
+GenomeFunctionLens Local 是面向 Windows 的本地单用户版本，面向本地查询、物种树/热图浏览、结果导出、查询保存和序列下载。
 
 本地版与在线版的主要区别：
 
@@ -75,7 +75,7 @@ project_data/
 默认把 `project_data` 放在本目录下：
 
 ```text
-web_sever_local_v1.0/
+genomefunctionlens_local_v1.0/
   project_data/
   local_data/
   src/
@@ -106,7 +106,7 @@ start_local.bat
 powershell -ExecutionPolicy Bypass -File .\start_local.ps1
 ```
 
-如果使用包含 `project_data_pipeline_v1.0` 的总发布目录，也可以回到上一级目录双击：
+如果使用包含 `project_data_pipeline_v1.1.0` 的总发布目录，也可以回到上一级目录双击：
 
 ```text
 start_local_web.bat

@@ -9,14 +9,14 @@ param(
 
 $ErrorActionPreference = "Stop"
 $ReleasesRoot = $PSScriptRoot
-$Launcher = Join-Path $ReleasesRoot "web_sever_local_v1.0\start_local.ps1"
+$Launcher = Join-Path $ReleasesRoot "genomefunctionlens_local_v1.0\start_local.ps1"
 if (-not (Test-Path -LiteralPath $Launcher -PathType Leaf)) {
-    throw "Local web edition not found: $Launcher"
+    throw "GenomeFunctionLens Local edition not found: $Launcher"
 }
 
 if (-not $ProjectDataRoot) {
     $Candidates = @(
-        (Join-Path $ReleasesRoot "web_sever_local_v1.0\project_data"),
+        (Join-Path $ReleasesRoot "genomefunctionlens_local_v1.0\project_data"),
         (Join-Path $ReleasesRoot "project_data"),
         (Join-Path (Split-Path -Parent $ReleasesRoot) "project_data")
     )
