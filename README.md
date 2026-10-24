@@ -416,3 +416,12 @@ GenomeFunctionLens Local 是单用户、本地运行的应用。
 | GenomeFunctionLens Local | `1.0.0` |
 | project_data 流水线 | `1.1.0` |
 | 运行期 schema | `4.0` |
+
+## 下载发布包
+
+| 发布包 | 内容 | 下载 |
+| --- | --- | --- |
+| GenomeFunctionLens Local v1.0.0 | 本地应用、前端构建产物和使用说明，不含 `project_data` | [ZIP](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/genomefunctionlens_local_v1.0.zip) · [SHA256](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/genomefunctionlens_local_v1.0.zip.sha256) |
+| project_data Pipeline v1.1.0 | 科学数据构建流水线、测试和运行文档 | [ZIP](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/project_data_pipeline_v1.1.0.zip) · [SHA256](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/project_data_pipeline_v1.1.0.zip.sha256) |
+
+下载后建议先核对 SHA256，再解压对应发布包。完整发行说明和校验值见 [GitHub Releases](https://github.com/lalintao/genomefunctionlens/releases/tag/v1.0.0)。
