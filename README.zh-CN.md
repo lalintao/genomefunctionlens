@@ -36,11 +36,11 @@ GenomeFunctionLens Local（`genomefunctionlens_local`）是面向 Windows 的单
 │   │   └── frontend/
 │   ├── start_local.bat
 │   └── start_local.ps1
-└── project_data_pipeline_v1.1.0/
+└── project_data_pipeline_v1.2.0/
     ├── src/
     ├── tests/
     ├── run_pipeline.py
-    └── 运行说明.md
+    └── annotation_matrix_commands.md
 ```
 
 以下目录不会提交到 Git：
@@ -226,7 +226,7 @@ local_data/
 Windows PowerShell：
 
 ```powershell
-cd project_data_pipeline_v1.1.0
+cd project_data_pipeline_v1.2.0
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -236,7 +236,7 @@ pip install -e .
 Linux 或 macOS：
 
 ```bash
-cd project_data_pipeline_v1.1.0
+cd project_data_pipeline_v1.2.0
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -375,7 +375,7 @@ Test-Path project_data\数据库4.0运行期数据库说明.md
 运行流水线测试：
 
 ```powershell
-cd project_data_pipeline_v1.1.0
+cd project_data_pipeline_v1.2.0
 python -m pytest
 ```
 
@@ -384,7 +384,7 @@ python -m pytest
 - SQLite `PRAGMA integrity_check` 返回 `ok`。
 - 每个矩阵的 shape 与 manifest 中的 `row_count` 和 `column_count` 一致。
 - 每个矩阵的行数与 `genome` 表行数一致。
-- `manifest.json` 中的 `pipeline_version` 为 `1.1.0`，`schema_version` 为 `4.0`。
+- `manifest.json` 中的 `pipeline_version` 为 `1.2.0`，`schema_version` 为 `4.0`。
 
 ### 运行期数据约束
 
@@ -409,16 +409,16 @@ GenomeFunctionLens Local 是单用户、本地运行的应用。
 ## 文档
 
 - [GenomeFunctionLens Local 使用说明](genomefunctionlens_local_v1.0/README.md)
-- [流水线运行说明](project_data_pipeline_v1.1.0/运行说明.md)
-- [构建逻辑与输入规范](project_data_pipeline_v1.1.0/src/docs/数据库4.0构建逻辑与输入规范.md)
-- [运行期数据库说明](project_data_pipeline_v1.1.0/src/docs/数据库4.0运行期数据库说明.md)
+- [注释矩阵新增与更新说明](project_data_pipeline_v1.2.0/annotation_matrix_commands.md)
+- [构建逻辑与输入规范](project_data_pipeline_v1.2.0/src/docs/数据库4.0构建逻辑与输入规范.md)
+- [运行期数据库说明](project_data_pipeline_v1.2.0/src/docs/数据库4.0运行期数据库说明.md)
 
 ## 版本
 
 | 组件 | 版本 |
 | --- | --- |
 | GenomeFunctionLens Local | `1.0.0` |
-| project_data 流水线 | `1.1.0` |
+| project_data 流水线 | `1.2.0` |
 | 运行期 schema | `4.0` |
 
 ## 下载发布包
@@ -426,6 +426,7 @@ GenomeFunctionLens Local 是单用户、本地运行的应用。
 | 发布包 | 内容 | 下载 |
 | --- | --- | --- |
 | GenomeFunctionLens Local v1.0.0 | 本地应用、前端构建产物和使用说明，不含 `project_data` | [ZIP](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/genomefunctionlens_local_v1.0.zip) · [SHA256](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/genomefunctionlens_local_v1.0.zip.sha256) |
-| project_data Pipeline v1.1.0 | 科学数据构建流水线、测试和运行文档 | [ZIP](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/project_data_pipeline_v1.1.0.zip) · [SHA256](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/project_data_pipeline_v1.1.0.zip.sha256) |
+| project_data Pipeline v1.2.0 | 注释矩阵维护、覆盖率统计、测试和运行文档 | [ZIP](https://github.com/lalintao/genomefunctionlens/releases/download/v1.2.0/project_data_pipeline_v1.2.0.zip) · [SHA256](https://github.com/lalintao/genomefunctionlens/releases/download/v1.2.0/project_data_pipeline_v1.2.0.zip.sha256) |
+| project_data Pipeline v1.1.0（冻结版） | 已冻结的 v1.1.0 科学数据构建流水线 | [ZIP](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/project_data_pipeline_v1.1.0.zip) · [SHA256](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/project_data_pipeline_v1.1.0.zip.sha256) |
 
-下载后建议先核对 SHA256，再解压对应发布包。完整发行说明和校验值见 [GitHub Releases](https://github.com/lalintao/genomefunctionlens/releases/tag/v1.0.0)。
+下载后建议先核对 SHA256，再解压对应发布包。完整发行说明和校验值见 [GitHub Releases](https://github.com/lalintao/genomefunctionlens/releases/tag/v1.2.0)。

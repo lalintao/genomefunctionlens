@@ -37,11 +37,11 @@ The application supports COG, KEGG, Pfam, and KEGG Module queries, result visual
 │   │   └── frontend/
 │   ├── start_local.bat
 │   └── start_local.ps1
-└── project_data_pipeline_v1.1.0/
+└── project_data_pipeline_v1.2.0/
     ├── src/
     ├── tests/
     ├── run_pipeline.py
-    └── 运行说明.md
+    └── annotation_matrix_commands.md
 ```
 
 The following directories are not committed to Git:
@@ -227,7 +227,7 @@ The companion pipeline reads raw inputs from `row_data/` and writes runtime pack
 Windows PowerShell:
 
 ```powershell
-cd project_data_pipeline_v1.1.0
+cd project_data_pipeline_v1.2.0
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -237,7 +237,7 @@ pip install -e .
 Linux or macOS:
 
 ```bash
-cd project_data_pipeline_v1.1.0
+cd project_data_pipeline_v1.2.0
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -376,7 +376,7 @@ Test-Path project_data\数据库4.0运行期数据库说明.md
 Run the pipeline tests:
 
 ```powershell
-cd project_data_pipeline_v1.1.0
+cd project_data_pipeline_v1.2.0
 python -m pytest
 ```
 
@@ -385,7 +385,7 @@ Before using a package, confirm that:
 - SQLite `PRAGMA integrity_check` returns `ok`.
 - Every matrix shape matches `row_count` and `column_count` in the manifest.
 - Every matrix has the same number of rows as the `genome` table.
-- `manifest.json` contains `pipeline_version: "1.1.0"` and `schema_version: "4.0"`.
+- `manifest.json` contains `pipeline_version: "1.2.0"` and `schema_version: "4.0"`.
 
 ### Runtime data constraints
 
@@ -410,16 +410,16 @@ Do not bind the service to `0.0.0.0` or expose it to an untrusted network withou
 ## Documentation
 
 - [GenomeFunctionLens Local guide (Chinese)](genomefunctionlens_local_v1.0/README.md)
-- [Pipeline runtime guide (Chinese)](project_data_pipeline_v1.1.0/运行说明.md)
-- [Build logic and input specification (Chinese)](project_data_pipeline_v1.1.0/src/docs/数据库4.0构建逻辑与输入规范.md)
-- [Runtime database schema (Chinese)](project_data_pipeline_v1.1.0/src/docs/数据库4.0运行期数据库说明.md)
+- [Pipeline overview and annotation matrix commands](project_data_pipeline_v1.2.0/annotation_matrix_commands.md)
+- [Build logic and input specification (Chinese)](project_data_pipeline_v1.2.0/src/docs/数据库4.0构建逻辑与输入规范.md)
+- [Runtime database schema (Chinese)](project_data_pipeline_v1.2.0/src/docs/数据库4.0运行期数据库说明.md)
 
 ## Versions
 
 | Component | Version |
 | --- | --- |
 | GenomeFunctionLens Local | `1.0.0` |
-| project_data pipeline | `1.1.0` |
+| project_data pipeline | `1.2.0` |
 | Runtime schema | `4.0` |
 
 ## Downloads
@@ -427,6 +427,7 @@ Do not bind the service to `0.0.0.0` or expose it to an untrusted network withou
 | Package | Contents | Download |
 | --- | --- | --- |
 | GenomeFunctionLens Local v1.0.0 | Local application, built frontend, and user guide; does not include `project_data` | [ZIP](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/genomefunctionlens_local_v1.0.zip) · [SHA256](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/genomefunctionlens_local_v1.0.zip.sha256) |
-| project_data Pipeline v1.1.0 | Scientific data pipeline, tests, and runtime documentation | [ZIP](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/project_data_pipeline_v1.1.0.zip) · [SHA256](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/project_data_pipeline_v1.1.0.zip.sha256) |
+| project_data Pipeline v1.2.0 | Annotation matrix maintenance, coverage reporting, tests, and runtime documentation | [ZIP](https://github.com/lalintao/genomefunctionlens/releases/download/v1.2.0/project_data_pipeline_v1.2.0.zip) · [SHA256](https://github.com/lalintao/genomefunctionlens/releases/download/v1.2.0/project_data_pipeline_v1.2.0.zip.sha256) |
+| project_data Pipeline v1.1.0 (legacy) | Frozen v1.1.0 scientific data pipeline | [ZIP](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/project_data_pipeline_v1.1.0.zip) · [SHA256](https://github.com/lalintao/genomefunctionlens/releases/download/v1.0.0/project_data_pipeline_v1.1.0.zip.sha256) |
 
-Verify the SHA256 checksum before extracting a package. See [GitHub Releases](https://github.com/lalintao/genomefunctionlens/releases/tag/v1.0.0) for release notes and checksums.
+Verify the SHA256 checksum before extracting a package. See [GitHub Releases](https://github.com/lalintao/genomefunctionlens/releases/tag/v1.2.0) for release notes and checksums.
